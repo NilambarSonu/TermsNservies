@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitti-AI - Terms of Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0e27;
+            color: #fff;
+            min-height: 100vh;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(46, 213, 115, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(52, 152, 219, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(155, 89, 182, 0.1) 0%, transparent 50%);
+            z-index: 0;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 80px 20px 60px;
+            position: relative;
+        }
+
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 5em;
+            filter: drop-shadow(0 0 30px rgba(46, 213, 115, 0.6));
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .glow-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 140px;
+            height: 140px;
+            border: 2px solid rgba(46, 213, 115, 0.3);
+            border-radius: 50%;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2ed573, #3498db, #9b59b6);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 5s ease infinite;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        @keyframes gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .header p {
+            font-size: 1.3em;
+            color: #a0aec0;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 40px 20px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .effective-date {
+            background: linear-gradient(135deg, rgba(46, 213, 115, 0.1), rgba(52, 152, 219, 0.1));
+            padding: 20px 30px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(46, 213, 115, 0.3);
+            font-size: 1.1em;
+            color: #2ed573;
+            text-align: center;
+        }
+
+        .intro {
+            font-size: 1.2em;
+            color: #cbd5e0;
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(46, 213, 115, 0.05), rgba(52, 152, 219, 0.05));
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 35px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border-left: 4px solid transparent;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #2ed573, #3498db);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .section:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(10px);
+            border-left-color: transparent;
+        }
+
+        .section:hover::before {
+            opacity: 1;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+
+        .section-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2ed573, #3498db);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.4em;
+            box-shadow: 0 4px 15px rgba(46, 213, 115, 0.3);
+            flex-shrink: 0;
+        }
+
+        .section h2 {
+            color: #fff;
+            font-size: 1.8em;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .section p, .section li {
+            color: #a0aec0;
+            font-size: 1.05em;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .section ul {
+            margin-left: 0;
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .section li {
+            padding-left: 35px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .section li::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            color: #2ed573;
+            font-size: 1.2em;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, rgba(46, 213, 115, 0.2), rgba(52, 152, 219, 0.2));
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #2ed573;
+            border: 1px solid rgba(46, 213, 115, 0.3);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 60px 20px 40px;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(46, 213, 115, 0.5), transparent);
+        }
+
+        .footer-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 20px rgba(46, 213, 115, 0.4));
+        }
+
+        .footer p {
+            color: #718096;
+            font-size: 1em;
+            margin-bottom: 8px;
+        }
+
+        .footer strong {
+            background: linear-gradient(135deg, #2ed573, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 60px 20px 40px;
+            }
+
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .header p {
+                font-size: 1.1em;
+            }
+
+            .logo {
+                font-size: 4em;
+            }
+
+            .glow-ring {
+                width: 110px;
+                height: 110px;
+            }
+
+            .glass-card {
+                padding: 25px;
+            }
+
+            .section {
+                padding: 25px 20px;
+            }
+
+            .section-header {
+                gap: 15px;
+            }
+
+            .section-number {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2em;
+            }
+
+            .section h2 {
+                font-size: 1.4em;
+            }
+
+            .section p, .section li {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .logo {
+                font-size: 3em;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .section-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <div class="glow-ring"></div>
+                <div class="logo">🌱</div>
+            </div>
+            <h1>Mitti-AI</h1>
+            <p>Terms of Service</p>
+        </div>
+
+        <div class="content">
+            <div class="glass-card">
+                <div class="effective-date">
+                    📜 Effective Date: 26-09-2025
+                </div>
+
+                <div class="intro">
+                    By using <strong>Mitti-AI's device, app, or website</strong>, you agree to these terms.
+                </div>
+
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-number">1</div>
+                        <h2>Acceptance</h2>
+                    </div>
+                    <p>Using our services means you accept these terms.</p>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-number">2</div>
+                        <h2>User Responsibilities</h2>
+                    </div>
+                    <ul>
+                        <li>Provide accurate soil samples and farm details.</li>
+                        <li>Do not misuse the device/app for illegal purposes.</li>
+                        <li>Maintain your own farming decisions; <span class="highlight">Mitti-AI only provides guidance</span>.</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-number">3</div>
+                        <h2>Intellectual Property</h2>
+                    </div>
+                    <ul>
+                        <li>All content, software, and device designs belong to <span class="highlight">Mitti-AI</span>.</li>
+                        <li>You may not copy or resell our technology without permission.</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-number">4</div>
+                        <h2>Limitation of Liability</h2>
+                    </div>
+                    <ul>
+                        <li>We provide <span class="highlight">guidance</span>, not guaranteed results.</li>
+                        <li>We are not liable for crop losses, misuse, or external conditions (like weather).</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-number">5</div>
+                        <h2>Termination</h2>
+                    </div>
+                    <p>We may suspend your account if you misuse the service.</p>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-number">6</div>
+                        <h2>Governing Law</h2>
+                    </div>
+                    <p>These terms are governed by the laws of Odisha,India.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-icon">🌾</div>
+            <p><strong>Mitti-AI</strong> - Empowering Farmers with Technology</p>
+            <p>© 2025 Mitti-AI. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
